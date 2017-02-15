@@ -45,14 +45,6 @@ baz = [1,2,3]
 
 test_object("foo")
 test_object("bar")
-
-test_function_v2("range",
-              index=1,
-              eq_condition="equal",
-              do_eval=True,
-              not_called_msg="The range function in Python 3 does not create a list. You must use list(range(a,b)) to create a list from the range object.",
-              incorrect_msg=None)
-
 test_object("baz")
 
 success_msg("Great! Let's move on to the next one.")
@@ -101,7 +93,7 @@ foo = []
 #    80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
 
 # Here is a super-simple third way to do it!
-# foo = range(0,100)
+# foo = list(range(0,100))
 
 ```
 
