@@ -45,6 +45,14 @@ baz = [1,2,3]
 
 test_object("foo")
 test_object("bar")
+
+test_function_v2("range",
+              index=1,
+              eq_condition="equal",
+              do_eval=True,
+              not_called_msg="The range function in Python 3 does not create a list. You must use list(range(a,b)) to create a list from the range object.",
+              incorrect_msg=None)
+
 test_object("baz")
 
 success_msg("Great! Let's move on to the next one.")
@@ -76,8 +84,8 @@ Note that you MUST use a `for` loop in this example. We've included some other w
 foo = []
 
 
-# This section implements the code using a while loop instead of a for loop.
-# Uncomment the lines below to see what kind of error message you would get for this,
+# This section creates the list using a while loop.
+# Uncomment the lines below to test it out,
 # Or just leave it commented out when you run your own code.
 # foo = []
 # count = 0
@@ -85,9 +93,8 @@ foo = []
 #     foo.append(count)
 #     count = count + 1
 
-# You can also uncomment the section below to see what kind of error you get if you try to 
-# type in the entire array rather than using a loop.
-# Or just leave it commented out when you run your own code.
+# This section creates the list by typing it all in.
+# As before, uncomment the code to test it out.
 # foo = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 
 #    28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 
 #    54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 
@@ -136,6 +143,8 @@ Here's your last programming task for today:
 - Use your function to square the number 37.
 - Print the result.
 
+A note: DataCamp uses Python 3, not Python 2. The proper use of `print` is as a function: `print(variable_name)`.
+
 *** =hint
 
 - function declarations in Python start with `def function_name(argument):`
@@ -147,6 +156,7 @@ Here's your last programming task for today:
 
 *** =sample_code
 ```{python}
+
 ```
 
 *** =solution
@@ -154,25 +164,25 @@ Here's your last programming task for today:
 def square(x):
     return x*x
 
-print square(37)
+y = square(37)
+print(y)
 ```
 
 *** =sct
 ```{python}
 # SCT written with pythonwhat: https://github.com/datacamp/pythonwhat/wiki
 
-test_function_v2(square,
+test_function_v2("square",
               index=1,
-              params=None,
-              signature=None,
               eq_condition="equal",
               do_eval=True,
               not_called_msg="You did not call your square() function.",
-              params_not_matched_msg=None,
-              params_not_specified_msg=None,
               incorrect_msg=None)
 
-test_output_contains(/1369/,
+test_output_contains("1369",
                      pattern=True,
                      no_output_msg="You did not print the result of your function.")
+
+success_msg("You're done! You can continue with the rest of The Quantum World.")
+
 ```
