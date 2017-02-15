@@ -1,8 +1,6 @@
-title                : Quantum World Basics
-instructors          :
- - colin.fredericks@gmail.com
-description          : This is an automatically generated demo course which will help you on your way to create an awesome DataCamp course.
-university           : DataCamp
-difficulty_level     : 2
-time_needed          : 1 hour
+title                : Quantum World - DataCamp Basics
+description          : This demonstration will help you understand how to use DataCamp's interface
+university           : Harvard
+difficulty_level     : 1
+time_needed          : 15 minutes
 programming_language : python
